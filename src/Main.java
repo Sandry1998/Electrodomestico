@@ -1,15 +1,37 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        crearElectrodomesticos();
     }
+    public static void crearElectrodomesticos(){
+        List<Electrodomestico> electrodomesticos = new ArrayList<>();
+        electrodomesticos.add(new Electrodomestico("NEVERA", "SAMSUNG", 2.2));
+        electrodomesticos.add(new Electrodomestico("HORNO", "FAGOR", 3.4));
+        electrodomesticos.add(new Lavadora("Cecotec", 2.8, 500, true));
+        electrodomesticos.add(new Lavadora("Hibense", 1.8, 400, false));
+        System.out.println("Catalogo Original: " + electrodomesticos);
+        for(Electrodomestico e: electrodomesticos){
+            System.out.println(electrodomesticos);
+        }
+
+        Collections.sort(electrodomesticos);
+        System.out.println("\nCatalogo ordenado por potencia");
+        for(Electrodomestico e: electrodomesticos){
+            System.out.println(electrodomesticos);
+        }
+        Collections.sort(electrodomesticos, new ComparadorPorMarca()) {
+
+        });
+
+    }
+
+
+
+
+
+
 }
